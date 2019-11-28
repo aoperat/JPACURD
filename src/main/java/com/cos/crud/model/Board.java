@@ -2,6 +2,7 @@ package com.cos.crud.model;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -33,6 +35,8 @@ public class Board {
 	private String title;
 	private String content;
 	
+	@ColumnDefault("0")
+	private int count;
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private User user;

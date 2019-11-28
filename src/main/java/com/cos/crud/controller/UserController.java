@@ -38,7 +38,7 @@ public class UserController {
 
 		if (u != null) {
 			session.setAttribute("user", u);
-			return Script.href("/");
+			return Script.href("/board/list");
 		} else {
 			return Script.back("로그인 실패");
 		}
