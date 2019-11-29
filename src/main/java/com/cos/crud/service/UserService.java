@@ -33,6 +33,7 @@ public class UserService {
 	}
 
 	public int userJoin(User user) {
+		user.setRole("user");
 		try {
 			mRepo.save(user);
 			return 1;

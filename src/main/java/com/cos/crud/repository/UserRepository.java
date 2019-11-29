@@ -3,6 +3,9 @@ package com.cos.crud.repository;
 import java.lang.annotation.Native;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.crud.model.User;
 
@@ -11,6 +14,12 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	//JpaRepository = CRUD 를 구현해주는 클래스 /naming 규칙 생성
 
 	User findByEmailAndPassword(String email, String password);
+	
+	@Transactional
+	@Modifying
+	@Query(value="UPDATE user SET role = ?1 WHERE id =?2" ,nativeQuery = true)
+	public void updateRole(String role,int id);
+	
 }
 
 

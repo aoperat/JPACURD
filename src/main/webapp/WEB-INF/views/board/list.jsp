@@ -8,6 +8,7 @@
 <title>리스트</title>
 </head>
 <body>
+<a href="/user/loginForm">로그인</a>
 	<table>
 		<tr>
 			<th>번호</th>

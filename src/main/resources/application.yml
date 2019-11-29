@@ -30,3 +30,7 @@ spring:
       enabled: true
       force: true
       
+  servlet:    multipart:      enabled: true
+      max-file-size: 1MB        
+file:
+  path: C:\dev\tools\sts-4.4.1.RELEASE\workspace\JPA-CRUD\src\main\resources\upload\
